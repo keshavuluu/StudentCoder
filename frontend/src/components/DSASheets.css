@@ -1,0 +1,73 @@
+.dsa-sheets-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sheets-description {
+  text-align: center;
+  margin: 1rem 0 2rem;
+  color: #888;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sheets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.sheet-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sheet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sheet-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.file-type {
+  margin: 0;
+  color: #4caf50;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.download-hint {
+  margin: 0;
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .dsa-sheets-container {
+    padding: 1rem;
+  }
+
+  .sheets-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sheet-card {
+    padding: 1rem;
+  }
+}

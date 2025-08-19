@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Setup Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background: #222;
+            color: #fff;
+        }
+        button {
+            background: #00bcd4;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .message {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid #4caf50;
+            color: #4caf50;
+        }
+        .error {
+            background: rgba(244, 67, 54, 0.2);
+            border: 1px solid #f44336;
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <h1>Profile Setup Test</h1>
+    <p>Test the profile setup API directly:</p>
+    
+    <form id="profileForm">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="test@example.com" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" value="Test" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" value="User" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="codechef">CodeChef Username:</label>
+            <input type="text" id="codechef" name="codechef" value="test_cc" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="leetcode">LeetCode Username:</label>
+            <input type="text" id="leetcode" name="leetcode" value="test_lc" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="gfg">GFG Username:</label>
+            <input type="text" id="gfg" name="gfg" value="test_gfg" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="interviewbit">InterviewBit Username:</label>
+            <input type="text" id="interviewbit" name="interviewbit" value="test_ib" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="codeforces">Codeforces Username:</label>
+            <input type="text" id="codeforces" name="codeforces" value="test_cf" required>
+        </div>
+        
+        <button type="submit">Create Profile</button>
+    </form>
+    
+    <div id="message"></div>
+    
+    <h2>Test Profile Check</h2>
+    <button onclick="checkProfile()">Check if profile exists</button>
+    <div id="checkResult"></div>
+
+    <script>
+        document.getElementById('profileForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = {
+                email: formData.get('email'),
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
+                platformUsernames: {
+                    codechef: formData.get('codechef'),
+                    leetcode: formData.get('leetcode'),
+                    gfg: formData.get('gfg'),
+                    interviewbit: formData.get('interviewbit'),
+                    codeforces: formData.get('codeforces')
+                }
+            };
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/user-profiles', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                const messageDiv = document.getElementById('message');
+                if (result.success) {
+                    messageDiv.className = 'message success';
+                    messageDiv.textContent = result.message;
+                } else {
+                    messageDiv.className = 'message error';
+                    messageDiv.textContent = result.message;
+                }
+            } catch (error) {
+                const messageDiv = document.getElementById('message');
+                messageDiv.className = 'message error';
+                messageDiv.textContent = 'Error: ' + error.message;
+            }
+        });
+        
+        async function checkProfile() {
+            const email = document.getElementById('email').value;
+            
+            try {
+                const response = await fetch(`http://localhost:5000/api/user-profiles/${email}`);
+                const result = await response.json();
+                
+                const resultDiv = document.getElementById('checkResult');
+                if (result.exists) {
+                    resultDiv.className = 'message success';
+                    resultDiv.textContent = 'Profile exists!';
+                } else {
+                    resultDiv.className = 'message error';
+                    resultDiv.textContent = 'Profile does not exist.';
+                }
+            } catch (error) {
+                const resultDiv = document.getElementById('checkResult');
+                resultDiv.className = 'message error';
+                resultDiv.textContent = 'Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

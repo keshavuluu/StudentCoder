@@ -1,0 +1,172 @@
+.roadmap-container {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  padding: 2rem 1rem 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.roadmap-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ffb300, #00bcd4, #4caf50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.roadmap-intro {
+  font-size: 1.2rem;
+  color: #bbb;
+  text-align: center;
+  max-width: 700px;
+  margin-bottom: 2.5rem;
+}
+
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2.5rem;
+}
+
+.roadmap-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.roadmap-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0, 188, 212, 0.18);
+  border-color: #00bcd4;
+}
+
+.roadmap-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+  color: #ffb300;
+}
+
+.roadmap-card h4 {
+  font-size: 1.1rem;
+  color: #00bcd4;
+  margin-bottom: 1rem;
+}
+
+.roadmap-card ul {
+  margin: 0 0 1rem 0;
+  padding-left: 1.2rem;
+}
+
+.roadmap-card li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.roadmap-note {
+  margin-top: 0.5rem;
+  font-size: 0.98rem;
+  color: #b2ff59;
+  font-style: italic;
+}
+
+.motivation-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 2px 16px rgba(0, 188, 212, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.motivation-section h2 {
+  color: #4caf50;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.motivation-section ul {
+  padding-left: 1.2rem;
+}
+
+.motivation-section li {
+  color: #fff;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.resources-section {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  max-width: 700px;
+  width: 100%;
+  margin: 2rem auto 0 auto;
+  box-shadow: 0 2px 16px rgba(0, 188, 212, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.resources-section h2 {
+  color: #ffb300;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+.resources-section ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.resources-section li {
+  color: #fff;
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.6;
+  list-style: disc inside;
+}
+
+.resources-section a {
+  color: #00bcd4;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.resources-section a:hover {
+  color: #4caf50;
+  text-decoration: underline wavy;
+}
+
+@media (max-width: 700px) {
+  .roadmap-title {
+    font-size: 1.5rem;
+  }
+  .roadmap-intro {
+    font-size: 1rem;
+  }
+  .roadmap-card {
+    padding: 1.2rem 0.7rem 1rem 0.7rem;
+  }
+  .motivation-section {
+    padding: 1rem 0.5rem;
+  }
+  .resources-section {
+    padding: 1rem 0.5rem;
+  }
+}

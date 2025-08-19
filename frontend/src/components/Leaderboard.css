@@ -1,0 +1,310 @@
+.leaderboard-container {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  padding: 2rem 1rem;
+  overflow-x: auto;
+}
+
+.leaderboard-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.leaderboard-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #00bcd4, #4caf50, #ffb300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.leaderboard-header p {
+  color: #bbb;
+  font-size: 1.1rem;
+}
+
+.leaderboard-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.tab {
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.tab.active {
+  background: #00bcd4;
+  border-color: #00bcd4;
+  color: #000;
+}
+
+.leaderboard-table-container {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 1rem;
+  overflow-x: auto;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+}
+
+.leaderboard-table th {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1rem 0.8rem;
+  text-align: left;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.leaderboard-table th.sortable {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.leaderboard-table th.sortable:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.sub-header {
+  display: block;
+  font-size: 0.8rem;
+  color: #bbb;
+  font-weight: 400;
+  margin-top: 0.2rem;
+}
+
+.leaderboard-table td {
+  padding: 1rem 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  vertical-align: middle;
+}
+
+.leaderboard-table tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.leaderboard-table tr.top-performer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 215, 0, 0.08),
+    rgba(255, 215, 0, 0.02)
+  );
+  border-left: 3px solid #ffd700;
+}
+
+.rank-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00bcd4;
+}
+
+.global-rank {
+  font-size: 0.8rem;
+  color: #888;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.name-cell {
+  position: relative;
+}
+
+.star-icon {
+  margin-right: 0.5rem;
+  color: #ffd700;
+}
+
+.student-name {
+  font-weight: 500;
+  color: #fff;
+}
+
+.badges {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 0.2rem 0.4rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.badge.danger {
+  background: #e53935;
+  color: #fff;
+}
+
+.score-cell {
+  text-align: center;
+  font-weight: 500;
+}
+
+.score {
+  font-size: 1.1rem;
+  color: #00bcd4;
+  font-weight: 600;
+}
+
+.si-breakdown {
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.si-breakdown div {
+  margin-bottom: 0.2rem;
+}
+
+.si-breakdown .total {
+  font-weight: bold;
+  color: #4caf50;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 0.2rem;
+  margin-top: 0.3rem;
+}
+
+.overall-score .score {
+  font-size: 1.3rem;
+  color: #ffb300;
+  text-shadow: 0 0 10px rgba(255, 179, 0, 0.3);
+}
+
+.username-cell {
+  text-align: center;
+}
+
+.username {
+  color: #888;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+.leaderboard-footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #888;
+}
+
+.leaderboard-footer p {
+  margin-bottom: 1rem;
+}
+
+.platform-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.platform-legend span {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .leaderboard-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .leaderboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .leaderboard-table {
+    font-size: 0.9rem;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 0.8rem 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .leaderboard-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .platform-legend {
+    gap: 0.8rem;
+  }
+
+  .platform-legend span {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+/* Scrollbar Styling */
+.leaderboard-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.leaderboard-table-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.leaderboard-table-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 188, 212, 0.5);
+  border-radius: 4px;
+}
+
+.leaderboard-table-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 188, 212, 0.7);
+}
+
+/* Animation for loading states */
+@keyframes shimmer {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.loading-row {
+  animation: shimmer 1.5s infinite;
+}
