@@ -16,6 +16,7 @@
     "hackathon": "file:..",
     "mongoose": "^7.5.0",
     "multer": "^1.4.5-lts.1",
+    "node-cron": "^4.2.1",
     "node-fetch": "^3.3.2",
     "puppeteer": "^24.16.1"
   },
