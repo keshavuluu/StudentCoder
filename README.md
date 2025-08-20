@@ -9,15 +9,15 @@ A **student-centric web platform** to collaborate, learn, and grow by discoverin
 ## ✨ Features  
 
 - 📢 **Hackathon Hub** – Add and explore hackathons happening in colleges or communities.  
-- 🏆 **Leaderboard** – Track and compare coding performance among students.  
-- 📚 **DSA Sheets** – Practice curated problem sets to strengthen coding skills.  
-- 🎯 **Roadmaps** – Guided learning paths for DSA, Web Development, and more.  
-- 💼 **Internship Listings** – Apply for opportunities on platforms like:  
+- 🏆 **Leaderboard** – Track and compare coding performance among students on platforms like:  
   - CodeChef  
   - Codeforces  
   - LeetCode  
   - GeeksforGeeks  
   - InterviewBit  
+- 📚 **DSA Sheets** – Practice curated problem sets to strengthen coding skills.  
+- 🎯 **Roadmaps** – Guided learning paths for DSA, Web Development, and more.  
+- 💼 **Internship Listings** – Apply for opportunities shared within the platform.  
 
 ---
 
