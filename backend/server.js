@@ -18,14 +18,14 @@ app.use("/api/user-profiles", userProfileRoutes);
 app.use("/api/hackathons", hackathonRoutes);
 app.use("/api", leaderboardRoutes);
 
-// Serve static files from the frontend dist folder in production
+// Serve static files from the frontend build folder in production
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
 }
 
 // Handle React routing, return all requests to React app
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "../frontend", "build", "index.html"));
 });
 
 // MongoDB connection
