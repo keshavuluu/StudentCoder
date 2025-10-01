@@ -25,7 +25,7 @@ A **student-centric web platform** to collaborate, learn, and grow by discoverin
 
 **Frontend:**  
 - React.js  
-- Tailwind CSS (if used)  
+- Tailwind CSS
 
 **Backend:**  
 - Node.js  
